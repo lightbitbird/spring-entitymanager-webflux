@@ -47,10 +47,6 @@ public class WebFluxApplicationConfig implements ApplicationContextAware {
             Properties props = PropertiesLoaderUtils.loadProperties(resource);
             logger.debug("Database path: " + resource.getURL().getPath());
 
-            System.out.println("-----------------------------");
-            System.out.println(props.getProperty("spring.datasource.url"));
-            System.out.println(props.getProperty("spring.datasource.driver-class-name"));
-
             final DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
             dataSourceBuilder.url(props.getProperty("spring.datasource.url"));
             dataSourceBuilder.driverClassName(props.getProperty("spring.datasource.driver-class-name"));

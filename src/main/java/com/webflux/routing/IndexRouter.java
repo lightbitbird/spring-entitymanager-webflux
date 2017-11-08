@@ -17,11 +17,11 @@ import reactor.core.publisher.Mono;
 @Component
 public class IndexRouter {
 
-	public RouterFunction<ServerResponse> routes() {
-		return route(GET("/"), this::index);
-	}
+    public RouterFunction<ServerResponse> routes() {
+        return route(GET("/"), this::index);
+    }
 
-	private Mono<ServerResponse> index(ServerRequest req) {
-		return ok().body(Flux.just("Webflux works!"), String.class);
-	}
+    private Mono<ServerResponse> index(ServerRequest req) {
+        return ok().body(Flux.just("Webflux works!"), String.class);
+    }
 }

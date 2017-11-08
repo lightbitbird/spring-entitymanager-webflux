@@ -37,9 +37,6 @@ import reactor.ipc.netty.http.server.HttpServer;
 @SpringBootApplication
 public class EntityManagerApplication {
 
-//    @Autowired
-//    private WebFluxApplicationConfig context;
-
     public static void main(String[] args) throws Exception {
 
         ApplicationContext app = new AnnotationConfigApplicationContext(WebFluxApplicationConfig.class);
@@ -57,9 +54,7 @@ public class EntityManagerApplication {
 
     @Bean
     public HttpServer server(RouterFunction<?> router) {
-//        HttpHandler handler = toHttpHandler(router);
         HttpServer httpServer = HttpServer.create("localhost", 8080);
-//        httpServer.start(new ReactorHttpHandlerAdapter(handler));
         return httpServer;
     }
 

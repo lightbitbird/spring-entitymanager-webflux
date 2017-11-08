@@ -29,8 +29,6 @@ public class HttpServerConfig {
         HttpHandler httpHandler = RouterFunctions.toHttpHandler(routerFunction);
         ReactorHttpHandlerAdapter adapter = new ReactorHttpHandlerAdapter(httpHandler);
         HttpServer server = HttpServer.create(environment.getProperty("server.address"), Integer.valueOf(environment.getProperty("server.port")));
-        System.out.println("-------" + environment.getProperty("server.address"));
-        System.out.println("-------" + environment.getProperty("server.port"));
         server.newHandler(adapter);
         return server;
     }
